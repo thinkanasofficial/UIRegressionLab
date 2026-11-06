@@ -1,0 +1,41 @@
+{
+  "name": "prism-ui-regression-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:ui": "playwright test tests/interactions.spec.ts tests/layout.spec.ts",
+    "test:visual": "playwright test tests/visual.spec.ts",
+    "snapshots:update": "playwright test tests/visual.spec.ts --update-snapshots",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "eval": "npm run test && npm run test:ui && npm run test:visual",
+    "mockup:compare": "node scripts/compare-mockup.mjs",
+    "mockup:approve": "node scripts/approve-mockup.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@storybook/react-vite": "^8.6.14",
+    "@types/node": "^22.15.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "storybook": "^8.6.14",
+    "typescript": "~5.8.3",
+    "vite": "^6.2.0",
+    "vitest": "^3.1.1",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0",
+    "@types/pngjs": "^6.0.5",
+    "@storybook/react": "^8.6.14"
+  }
+}
